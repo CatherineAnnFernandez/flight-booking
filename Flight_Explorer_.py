@@ -3,7 +3,6 @@
 #modules
 import mysql.connector 
 from tabulate import tabulate
- 
 
 #functions
 def connect_to_mysql():
@@ -43,7 +42,6 @@ def show_available_flights(connection, user_month, user_departure, user_destinat
 
         cursor.execute(query, values)
 
-        
         rows = cursor.fetchall()
 
         if not rows:
@@ -624,8 +622,7 @@ if user_option == '1':
                         credit_card = input('- ')
                         
                     update_seats_after_payment(connection, user_flight_id, no_passengers)
-                    
-                
+                                    
 else :
     print()
     print('Exiting....')    
