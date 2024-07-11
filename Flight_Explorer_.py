@@ -444,8 +444,7 @@ if user_option == '1':
                 user_nationality = input('- ')
                 print()
                                 
-                #ticket price
-                
+                #ticket price  
                 if 2024 - year < 12 :   #50% discount for children under 12
                     discount = 50/100   
                 
@@ -516,18 +515,15 @@ if user_option == '1':
                         print('Invalid option, please enter again!')
                         user_option = int(input('- '))
                     user_meal = non_veg_meals[user_option-1]
-                    print('[ Selected meal:',user_meal,']')
-                
-                    
+                    print('[ Selected meal:',user_meal,']')  
+      
                 passenger_details += [user_meal]   
                 passenger_details += [class_price]
                 passenger_details += [discount]
-                passenger_list[passenger_name] = passenger_details 
-                
+                passenger_list[passenger_name] = passenger_details            
                 del passenger_details
                 
-            #contact details
-            
+            #contact details   
             print('Enter email address')
             user_email = input('- ')
             print()
@@ -537,45 +533,36 @@ if user_option == '1':
                 print()
             print('Enter mobile number')
             user_mno = int(input('- '))
-            print()
+            print()           
             while len(str(user_mno)) != 10 :
                 print('PLEASE enter valid number!')
                 user_mno = int(input('- '))
                 print()           
                         
-            #confirmation 
-                                                                              
+            #confirmation                                                                            
             print('Total amount :',end=' ')        
-            print('AED',price)
-            
+            print('AED',price)    
             print('1. Trip Summary')
             print('2. Book ticket')
             print('3. Cancel')
             print()
             user_option = int(input('-'))
             
-            if user_option == 2 :
-                
+            if user_option == 2 :      
                 print('Enter credit card number')
                 credit_card = int(input('- '))
-                print()
-                
+                print()   
                 while len(str(credit_card)) != 12 : 
                     print('Invalid number, please enter again')
                     credit_card = input('- ')
-                    print()
-                    
+                    print()   
                 update_seats_after_payment(connection, user_flight_id, no_passengers)
                                         
-            if user_option == 1 :
-                                
+            if user_option == 1 :             
                 flight_info = get_flight_details(connection, user_flight_id)
-
-                if flight_info:
-                    
+                if flight_info:  
                    #unpacking 
-                    airline, departure_date, departure_time, arrival_time = flight_info
-                    
+                    airline, departure_date, departure_time, arrival_time = flight_info         
                     print()
                     print('Trip Summary')
                     print()
@@ -585,14 +572,12 @@ if user_option == '1':
                     print('To:', user_city)
                     print('Date:',departure_date)
                     print('Airline:', airline) 
-                    
                     print('Departure time:',departure_time)
                     print('Arrival time:',arrival_time)
                     print('Flight ID:', user_flight_id)
                     print('Number of passengers:', no_passengers)
 
-                    for i in passenger_list:
-                        
+                    for i in passenger_list:  
                         print()
                         print('Name:', i)
                         print('Class type:', passenger_list[i][1], end=' ')
@@ -611,16 +596,13 @@ if user_option == '1':
                 user_option = int(input('- '))
                 print()
                 
-                if user_option ==1 :
-                    
+                if user_option ==1 :                
                     print('Enter credit card number')
                     credit_card = int(input('- '))
-                    print()
-                    
+                    print()     
                     while len(str(credit_card)) != 16 : 
                         print('Invalid number, please enter again')
-                        credit_card = input('- ')
-                        
+                        credit_card = input('- ')  
                     update_seats_after_payment(connection, user_flight_id, no_passengers)
                                     
 else :
