@@ -39,9 +39,7 @@ def show_available_flights(connection, user_month, user_departure, user_destinat
         """
 
         values = (user_departure, user_destination, user_month)
-
         cursor.execute(query, values)
-
         rows = cursor.fetchall()
 
         if not rows:
