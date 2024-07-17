@@ -106,7 +106,6 @@ def update_seats_after_payment(connection, flight_id, no_passengers):
 def get_flight_details(connection, flight_id):
     try:
         cursor = connection.cursor()
-        
         query = """
             SELECT af.departure_date, fd.departure_time, fd.arrival_time, fd.airline
             FROM available_flights af
